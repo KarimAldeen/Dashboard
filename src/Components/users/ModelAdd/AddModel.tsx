@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik';
 import React, { useTransition } from 'react';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import AddModelBody from './AddModelBody';
-import { getDataToSend, getInitialValues, getValidationSchema } from '../Formik';
+import { getInitialValues, getValidationSchema } from '../Formik';
 import { ServerApi } from '../Api/Add';
 
 const AddModel = ({ FormTable,setFormTable} : any) => {
