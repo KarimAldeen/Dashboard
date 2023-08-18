@@ -3,6 +3,7 @@
 import { revalidateTag } from "next/cache";
 
 export  const ServerApi = async(id:number)=>{
+  
     try {
         const response = await fetch(`https://64df594871c3335b25827869.mockapi.io/users/${id}`, {
           method: 'DELETE',
