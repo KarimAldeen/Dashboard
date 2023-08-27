@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { SideBar_Links } from '@/Utils/SideNavLinks';
 import { usePathname } from 'next/navigation'
 import Link from 'next/link';
-import { FaAngleDown } from 'react-icons/fa';
+import { FaAngleDown, FaAngleRight } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi";
 const SideBar = () => {
   
@@ -70,7 +70,9 @@ const SideBar = () => {
                       {i?.Name}
                     </div>
                     <div className='DropDown_Svg' onClick={() => setIsopen(v => !v)}>
-                      <FaAngleDown />
+                     {Isopen ? <FaAngleDown /> :  <FaAngleRight />
+
+                     }
 
                     </div>
                   </div>
