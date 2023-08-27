@@ -1,12 +1,23 @@
 'use client'
 import React, { useMemo } from "react";
 import TableActions from "../Utils/TableActions";
-import { useDeletUsers } from "@/api/AllApi/users";
 import { ServerApi } from "./Api/Delet";
+import Response from "@/Hooks/Response";
+import { toast } from "react-toastify";
 
 const useTableColumns = ({ setFormTable }: any) => {
-  const { mutate } = useDeletUsers();
-  
+
+  const OnDelet = (row:any)=>{
+    ServerApi(row?.id)
+    Response()
+    .then(result => {
+        toast.success("success")
+    })
+    .catch(error => {
+        toast.error("error")
+
+    });
+  }
   return useMemo(
     () => [
       {
@@ -29,7 +40,7 @@ const useTableColumns = ({ setFormTable }: any) => {
         maxWidth: "auto",
         cell: (row: any) => (
           <TableActions
-            onDelete={() => ServerApi(row?.id)}
+            onDelete={() => OnDelet(row)}
             onEdit={() =>
               setFormTable((prev: any) => ({
                 ...prev,

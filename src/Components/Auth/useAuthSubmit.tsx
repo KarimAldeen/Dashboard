@@ -1,10 +1,12 @@
 'use client'
+
 interface Authvalues{
     username: string; 
     password: string;
 }
 
 export const useAuthSubmit = async (values: Authvalues,router:any) => {
+
     try {
       const response = await fetch('http://apptest.kammun.com/api/auth/admin_login', {
         method: 'POST',
@@ -20,6 +22,7 @@ export const useAuthSubmit = async (values: Authvalues,router:any) => {
         if (firebase_token) {
           localStorage.setItem('firebase_token', firebase_token);
           localStorage.setItem('username', username);
+          
           router.push("/")
 
         } else {

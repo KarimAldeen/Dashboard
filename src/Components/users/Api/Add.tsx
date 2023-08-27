@@ -1,9 +1,13 @@
 "use server"
 
 import { revalidateTag } from "next/cache";
+import { cookies } from "next/headers";
 
 export  const ServerApi = async(values:any)=>{
+  cookies().set("response","state");
+
     try {
+      
         const response = await fetch('https://64df594871c3335b25827869.mockapi.io/users', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -14,8 +18,10 @@ export  const ServerApi = async(values:any)=>{
         if (response?.ok) {
           const data = await response.json();
           revalidateTag("users")
+          cookies().set("response","true");
 
         } else {
+          cookies().set("response","false");
           throw new Error('Failed to log in.');
         }
       } catch (error) {

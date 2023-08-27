@@ -25,7 +25,7 @@ const TableActions = ({ onDelete   , onEdit,showEdit=true,showDelete=true, child
         onClick={() =>
           confirmAlert({
             onConfirm: () => {
-              toast.info(("_loading.delete"));
+
               onDelete();
             },
           
