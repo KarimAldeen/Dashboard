@@ -1,6 +1,5 @@
 import React , {ReactNode} from "react";
 import confirmAlert from "./Alert";
-import { toast } from "react-toastify";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 type   TableActionsProps = {

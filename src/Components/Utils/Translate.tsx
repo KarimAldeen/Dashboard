@@ -39,15 +39,20 @@ export default function Translate() {
   };
 
   return (
+   <div className='Translate'>
     <Menu menuButton={<MenuButton>
-        <img alt='' src={`../Layout/${language}.svg`} width={25} height={20} />
+        <img alt='' src={`../Layout/${language}.svg`} width={20} height={20} />
     </MenuButton>} transition>
       <MenuItem onClick={() => changeLanguage('ar')}>
-        <img alt='' src='../Layout/Ar.svg' width={25} height={20} />
+        <img alt='' src='../Layout/Ar.svg' width={20} height={20} />
       </MenuItem>
       <MenuItem onClick={() => changeLanguage('en')}>
-        <img alt='' src='../Layout/En.svg' width={25} height={20} />
+        <img alt='' src='../Layout/En.svg' width={20} height={20} />
       </MenuItem>
     </Menu>
+    <p>
+      English
+    </p>
+   </div>
   );
 }

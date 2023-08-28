@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link';
 import { FaAngleDown, FaAngleRight } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi";
+import {nanoid} from 'nanoid'
 const SideBar = () => {
   
   const pathname = usePathname()
@@ -56,7 +57,7 @@ const SideBar = () => {
             }
             else {
               return (
-                <>
+                <React.Fragment key={nanoid()}>
                   <div
                     className={Isopen ? 'SideBar_Link DropDown  DropDown_SideBar_Link' : 'SideBar_Link DropDown'}
                     key={index}
@@ -78,11 +79,10 @@ const SideBar = () => {
                   </div>
                   {Isopen ?
 
-                    i.children?.map((i, index) => {
-
+                    i?.children?.map((i, index) => {
                       if (i?.href) {
                         return (
-                          <>
+                          <React.Fragment key={nanoid()}>
                             <Link
                               href={i?.href}
                               className={'SideBar_Link'}
@@ -95,7 +95,7 @@ const SideBar = () => {
                               </div>
                             </Link>
 
-                          </>
+                          </React.Fragment>
 
                         )
                       }
@@ -105,7 +105,7 @@ const SideBar = () => {
                     : ""
 
                   }
-                </>
+                </React.Fragment>
 
               )
             }

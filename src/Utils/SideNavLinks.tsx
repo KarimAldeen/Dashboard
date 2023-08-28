@@ -51,24 +51,7 @@ export const SideBar_Links =[
         href : "/donkey",
         Icon : <FaGgCircle/>
     }
-    ,
-    {
-        Name : "donkey",
-        href : "/donkey",
-        Icon : <FaGgCircle/>
-    }
-    ,
-    {
-        Name : "donkey",
-        href : "/donkey",
-        Icon : <FaGgCircle/>
-    }
-    ,
-    {
-        Name : "donkey",
-        href : "/donkey",
-        Icon : <FaGgCircle/>
-    }
+    
    
    
     
