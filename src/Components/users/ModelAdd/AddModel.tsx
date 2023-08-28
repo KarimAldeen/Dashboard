@@ -5,8 +5,8 @@ import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import AddModelBody from './AddModelBody';
 import { getInitialValues, getValidationSchema } from '../Formik';
 import { ServerApi } from '../Api/Add';
-import Tostifay from '@/Hooks/Tostifay';
-import Response from '@/Hooks/Response';
+import Tostifay from '@/Hooks/api/Tostifay';
+import Response from '@/Hooks/api/Response';
 import { toast } from 'react-toastify';
 
 interface Props {

@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect } from 'react';
-import isLogin from '../Hooks/IsLogin';
+import isLogin from '../Hooks/Auth/IsLogin';
 import { useRouter } from 'next/navigation';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {

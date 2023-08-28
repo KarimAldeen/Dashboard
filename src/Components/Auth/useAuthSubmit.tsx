@@ -9,6 +9,7 @@ interface Authvalues{
 
 
 export const useAuthSubmit = async (values: Authvalues) => {
+
     try {
       const response = await fetch('http://apptest.kammun.com/api/auth/admin_login', {
         method: 'POST',
@@ -19,13 +20,13 @@ export const useAuthSubmit = async (values: Authvalues) => {
 
       if (response?.ok) {
         const data = await response.json();
-        const { firebase_token, username } = data.data;
+        const { firebase_token, username ,is_super_user} = data.data;
         if (firebase_token) {
           // localStorage.setItem('firebase_token', firebase_token);
           // localStorage.setItem('username', username);
           cookies().set("firebase_token",firebase_token);
           cookies().set("username",username);         
-           
+          cookies().set("is_super_user",is_super_user);
           
 
         } else {

@@ -6,7 +6,7 @@ import { LoadingButton } from '../../Utils/LoadingButton';
 import EditModelBody from './EditModelBody';
 import { getDataToSend, getInitialValues, getValidationSchema } from '../Formik';
 import { ServerApi } from '../Api/Edit';
-import Response from '@/Hooks/Response';
+import Response from '@/Hooks/api/Response';
 import { toast } from 'react-toastify';
 
 const EditModel = ({ FormTable,setFormTable} : any) => {

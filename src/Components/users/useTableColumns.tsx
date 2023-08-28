@@ -2,7 +2,7 @@
 import React, { useMemo } from "react";
 import TableActions from "../Utils/TableActions";
 import { ServerApi } from "./Api/Delet";
-import Response from "@/Hooks/Response";
+import Response from "@/Hooks/api/Response";
 import { toast } from "react-toastify";
 
 const useTableColumns = ({ setFormTable }: any) => {
