@@ -22,15 +22,16 @@ const useTableColumns = ({ setFormTable }: any) => {
     () => [
       {
         name: "Name",
-        selector: "name",
+        selector: (row:any) => row.name,
       },
       {
         name: "email",
-        selector: "email",
+        selector: (row:any) => row.email,
+
       },
       {
         name: "password",
-        selector: "password",
+        selector: (row:any) => row.password,
       },
      
       {

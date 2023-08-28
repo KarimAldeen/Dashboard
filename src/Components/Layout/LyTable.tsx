@@ -8,7 +8,6 @@ const LyTable = (props:any) => {
       <DataTable
         columns={props?.column}
         data={props?.data}
-        progressPending={props?.isLoading}
         noDataComponent={<h6 className="my-4">{("no_records")}</h6>}
         noHeader
         pagination

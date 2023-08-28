@@ -1,17 +1,23 @@
 'use client'
 import React, { useEffect } from 'react';
-import useLogin from '@/Hooks/useLogin';
-import { redirect } from 'next/navigation';
+import isLogin from '../Hooks/IsLogin';
+import { useRouter } from 'next/navigation';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
-    const isLogin = useLogin();
-    useEffect(() => {
-        if (!isLogin) {
-            redirect('/auth');
-        }
-    }, [isLogin]);
+    const router = useRouter();
 
-    return <>{isLogin && children}</>;
+     useEffect(() => {
+        isLogin()  
+        .then(result => {
+          router.replace('/');
+        })
+        .catch(error => {
+          router.replace('/auth');
+  
+        });
+     }, [])
+     
+    return <>{children}</>;
 }
 
 export default ProtectedRoute;

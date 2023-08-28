@@ -17,7 +17,6 @@ const Body:FC<IProps> = ({data}) => {
       <LyTable
         columns={column}
         data={data}
-        // progressPending={isLoading}
 
       />
       <AddModel FormTable={FormTable} setFormTable={setFormTable} />
