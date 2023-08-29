@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
       <ToastContainer />
 
-        {/* <ProtectedRoute> */}
+        <ProtectedRoute>
         {/* <QueryProvider> */}
 
         
@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         </div>
         {/* </QueryProvider> */}
-        {/* </ProtectedRoute> */}
+        </ProtectedRoute>
       </body>
     </html>
   )
