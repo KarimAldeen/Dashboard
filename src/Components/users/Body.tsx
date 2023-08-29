@@ -17,7 +17,7 @@ const Body:FC<IProps> = ({data}) => {
       <LyTable
         columns={column}
         data={data}
-
+      
       />
       <AddModel FormTable={FormTable} setFormTable={setFormTable} />
       <EditModel FormTable={FormTable} setFormTable={setFormTable}/>
