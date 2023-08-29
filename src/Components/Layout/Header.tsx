@@ -3,8 +3,9 @@ import React from 'react'
 import Translate from '../Utils/Translate';
 
 type  TUserData = 
-  {username:string ,
-   is_super_user:number }
+  {username:string | undefined,
+   is_super_user:number | undefined
+   }
 
 
 const Header = ({UserData}:{UserData:TUserData}) => {  

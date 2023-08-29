@@ -1,6 +1,7 @@
 import React from "react";
 import { ErrorMessage, useField, Field } from "formik";
-import { FormGroup } from "reactstrap";
+     ///@ts-ignore 
+import { CustomInput, FormGroup } from "reactstrap";
 import { useTranslation } from 'react-i18next';
 
 import PropTypes from "prop-types";
@@ -19,6 +20,12 @@ const ValidatedField = ({
   const [field, meta] = useField({ name, ...props });
   const [t] = useTranslation();
   let Wrapper = Field;
+  if (props.type === "file") {
+    Wrapper = CustomInput;
+  }
+  if (CustomField) {
+    Wrapper = CustomField;
+  }
   const fieldProps = props.type === "file" ? {} : { ...field };
 
   return (

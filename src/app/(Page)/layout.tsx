@@ -14,7 +14,6 @@ export const metadata: Metadata = { title: 'Create Next App', description: 'Gene
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
   const UserData = GetUserData() 
-  console.log(UserData);
   
   return (
     <html lang="en">
@@ -24,8 +23,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
       <ToastContainer />
 
-        <ProtectedRoute>
-        <QueryProvider>
+        {/* <ProtectedRoute> */}
+        {/* <QueryProvider> */}
 
         
         <div className="DashboardLayout">
@@ -41,8 +40,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
 
         </div>
-        </QueryProvider>
-        </ProtectedRoute>
+        {/* </QueryProvider> */}
+        {/* </ProtectedRoute> */}
       </body>
     </html>
   )

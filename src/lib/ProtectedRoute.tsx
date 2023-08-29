@@ -9,7 +9,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
      useEffect(() => {
         isLogin()  
         .then(result => {
-          router.replace('/');
+          
         })
         .catch(error => {
           router.replace('/auth');

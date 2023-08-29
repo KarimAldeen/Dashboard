@@ -1,9 +1,11 @@
 import React from 'react'
 import { ValidatedField } from '../../Utils/ValidatedField'
-import { Col, Row } from 'reactstrap'
+import { Col, Input, Row } from 'reactstrap'
+import { useFormikContext } from 'formik';
 
 const AddModelBody = () => {
 
+  const formik = useFormikContext();
 
   return (
     <Row xs={1} sm={1} md={1} lg={2} xl={2} className="p-2" >
@@ -14,17 +16,14 @@ const AddModelBody = () => {
           label={("name")}
           placeholder={("name")}
           type="string"
-          required
+          
         />
-        <ValidatedField
-          name="email"
-          ///@ts-ignore
-          label={("email")}
-          placeholder={("email")}
-          type="string"
-          required
-        />
-       
+         <Input
+      id="exampleFile"
+      className='form-control form-label'
+      name="file"
+      type="file"
+    />
       </Col>
 
       <Col>
@@ -35,7 +34,7 @@ const AddModelBody = () => {
           label={("password")}
           placeholder={("password")}
           type="string"
-          required
+          
         />
       </Col>
     </Row>

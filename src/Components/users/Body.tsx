@@ -12,7 +12,7 @@ const Body:FC<IProps> = ({data}) => {
     const column: any = useTableColumns({ setFormTable })
 
     return(
-        <div className='Page'>
+        <div className='Page' >
       <div className='Page_Header'>  <Add_Button setFormTable={setFormTable} /> <SearchBar /></div>
       <LyTable
         columns={column}

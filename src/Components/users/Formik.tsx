@@ -7,6 +7,7 @@ export const getInitialValues : any = (objectToEdit : any) => {
       name :objectToEdit?.name ?? "",
       password :objectToEdit?.password ?? "",
       email :objectToEdit?.email ?? "",
+      file : ""
 
     };
   
@@ -15,7 +16,9 @@ export const getInitialValues : any = (objectToEdit : any) => {
 
 export const getValidationSchema = () => {
   return Yup.object().shape({
-
+    name:Yup.string().required('Required'),
+    password:Yup.string().required('Required'),
+    email:Yup.string().required('Required'),
 
   });
 };

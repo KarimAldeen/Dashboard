@@ -1,22 +1,18 @@
 'use client'
 import { Form, Formik } from 'formik';
 import React, { useTransition } from 'react';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import AddModelBody from './AddModelBody';
 import { getInitialValues, getValidationSchema } from '../Formik';
 import { ServerApi } from '../Api/Add';
 import Tostifay from '@/Hooks/api/Tostifay';
 import Response from '@/Hooks/api/Response';
 import { toast } from 'react-toastify';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
-interface Props {
-  FormTable?: any;
-  setFormTable?: React.Dispatch<React.SetStateAction<any>>;
-}
 
-const AddModel: React.FC<Props> = ({ FormTable = {}, setFormTable = () => {} }) => {
-  let [isPending, startTransition] = useTransition();
-  
+const AddModel = ({ FormTable, setFormTable}:{FormTable:any, setFormTable:any}) => {
+  let [isPending, startTransition] = useTransition(); 
   const handleSubmit = (values: any) => {
     startTransition(() => ServerApi(values));
     Tostifay("Added success");
@@ -32,32 +28,33 @@ const AddModel: React.FC<Props> = ({ FormTable = {}, setFormTable = () => {} }) 
   };
  
   return (
-    <Modal isOpen={FormTable?.OpenAdd} centered size="lg">
-      <ModalHeader toggle={() => setFormTable((pre: any) => ({...pre, OpenAdd: false}))}>
-        Add new user
-      </ModalHeader>
-      <Formik
-        onSubmit={values => handleSubmit(values)}
-        initialValues={getInitialValues(FormTable.objectToAdd)}
-        validationSchema={getValidationSchema()}
-      >
-        {formik => (
-          <Form>
-            <ModalBody>
-              <AddModelBody/>
-            </ModalBody>
-            <ModalFooter>
-              <Button onClick={() => setFormTable((pre: any) => ({...pre, OpenAdd: false}))} color="danger">
-                Cancel
-              </Button>
-              <Button type="submit" color="primary" className="Model_Button">
-                {isPending ? "Adding...." : 'Submit'}
-              </Button>
-            </ModalFooter>
-          </Form>
-        )}
-      </Formik>
-    </Modal>
+   
+     <Modal show={FormTable?.OpenAdd}  centered size={"lg"} onHide={() => setFormTable((pre: any) => ({...pre, OpenAdd: false}))}>
+     <Modal.Header closeButton>
+       <Modal.Title>Add new user</Modal.Title>
+     </Modal.Header>
+     <Formik
+         onSubmit={values => handleSubmit(values)}
+         initialValues={getInitialValues(FormTable.objectToAdd)}
+         validationSchema={getValidationSchema()}
+       >
+         {() => {
+           return (
+             <Form>
+     <Modal.Body>  <AddModelBody /> </Modal.Body>
+     <Modal.Footer>
+       <Button variant="danger" onClick={() => setFormTable((pre: any) => ({...pre, OpenAdd: false}))}>
+         Close
+       </Button>
+       <Button  type="submit" color="primary" className="Model_Button" onClick={() => setFormTable((pre: any) => ({...pre, OpenAdd: true}))}>
+       {isPending ? "Adding...." : 'Submit'}
+       </Button>
+     </Modal.Footer>
+     </Form>
+           );
+         }}
+       </Formik>
+   </Modal>
   );
 };
 
