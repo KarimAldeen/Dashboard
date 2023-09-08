@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { ErrorMessage, useField, Field } from "formik";
 import { FormGroup } from "reactstrap";
@@ -52,9 +53,12 @@ const ValidatedField = ({
   );
 };
 
-ValidatedField.propTypes = {
-  name: PropTypes.string.isRequired,
-  optional: PropTypes.bool,
-};
+// ValidatedField.propTypes = {
+//   name: PropTypes.string.isRequired,
+//   optional: PropTypes.bool,
+//   label: PropTypes.string.isRequired, // Make sure 'label' is defined here
+//   placeholder: PropTypes.string.isRequired,
+//   type: PropTypes.string.isRequired,
+// };
 
 export { ValidatedField };

@@ -36,3 +36,10 @@ svg{
     fill:var(--text) !important;
 }
 }
+
+.Actions{
+    display: flex; align-items: center; gap: 5px;
+path{
+    stroke:var(--primary) !important;
+}
+}

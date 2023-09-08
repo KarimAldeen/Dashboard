@@ -1,6 +1,5 @@
-body {
-    background: url('../../../public/Layout/body_background.png');
-    background: var(--bg2);
+html {
+    background: var(--bg2)
 
 }
 
@@ -20,4 +19,8 @@ a {
 button,
 svg {
     cursor: pointer;
+    
+
 }
+
+

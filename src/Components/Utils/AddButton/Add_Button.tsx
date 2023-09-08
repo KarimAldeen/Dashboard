@@ -1,8 +1,12 @@
+'use client'
 import React from 'react'
 import './Add_Button.scss'
-const Add_Button = ({setFormTable}:any) => {
+import { useModal } from '@/lib/Zustand'
+const Add_Button = () => {
+    const { setIsOpenAddModel  } = useModal(state => state )
+
     return (
-        <div className='Add_Button' onClick={ ()=> {setFormTable((pre:any)=>({...pre,["OpenAdd"]:true}))} }>
+        <div className='Add_Button' onClick={ ()=> {setIsOpenAddModel() }}>
             <button>
                 <span>
                     <svg

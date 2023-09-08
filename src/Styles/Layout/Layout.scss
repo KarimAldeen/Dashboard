@@ -41,9 +41,9 @@
  border: none !important;
 }
 .Model_Button{
-    background: var(--primary);
-    outline: none;
-    border: none;
+    background: var(--primary) !important;
+    outline: none !important;
+    border: none !important;
 }
 .SweetAlert{
     .btn-primary{
@@ -69,4 +69,53 @@
 }
 .PrimaryColor{
     margin-inline: 10px;
+}
+.ViewTapPage{
+    button{
+        outline: transparent !important;
+        border: transparent !important;
+        background: var(--primary) !important;
+    
+    }
+    .CardHeader{
+        display: flex; justify-content: space-between;
+        padding: 30px 3vw 5px 3vw;
+        background: var(--bg) !important;
+    }
+    .card-header{
+        border-bottom:none !important;
+    }
+}
+.Tab_Word {
+    display: flex; align-items: center; gap: 10px;
+    h1{
+        color: var(--primary) !important;
+        font-size: 20px;
+        height: 20px;
+
+    }
+    svg{
+        fill: var(--primary) !important;
+
+    }
+}
+.react-tabs__tab--selected{
+    text-align: center;
+    min-width: 20%;
+    border-color: var(--primary) !important;
+    font-weight: bold;
+    color: var(--primary) !important;
+}
+.react-tabs__tab{
+    text-align: center;
+    min-width: 20%;
+    color: var(--primary);
+    svg{
+        margin-inline: 10px;
+    }
+
+}
+.View_information{
+    font-weight: bold;
+color: var(--primary);
 }

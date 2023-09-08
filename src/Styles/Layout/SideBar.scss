@@ -14,7 +14,7 @@
 
 .SideBar_Top {
     @include Flex;
-    margin-block: 20px;
+    margin-block: 10px;
     color: var(--primary);
     z-index: 9999999;
     img{
